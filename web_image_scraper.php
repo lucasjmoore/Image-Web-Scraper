@@ -1,5 +1,4 @@
 <?
-/*Lucas*/
 $webpage = file_get_contents('website_url_here');
 $docObj = new DOMDocument(); 
 $docObj->loadHTML($webpage);
@@ -22,11 +21,9 @@ foreach($images as $image) {
 		
 		//save each image to folder
 		$file_name = $imageAlt_fileSafe;
-		//downloads the image - commented out to save bandwidth
+		//downloads the image and saves it to speficied location ("Applicatons/MAMP/htdocs/website_images") as png
 		$img = '/Applications/MAMP/htdocs/website_images/'.$file_name.'.png';
 		file_put_contents($img, file_get_contents($imageSrc));
 	}
 }
 ?>
-
-
